@@ -1,132 +1,86 @@
-````markdown
 # 📚 Student Feedback Portal
-
 A **full-stack web application** for managing and collecting feedback from students and teachers.  
 Built with **React**, **Node.js**, **Express**, **MongoDB**, and **Material UI** for a responsive, modern, and user-friendly experience.
 
----
-
 ## 🚀 Features
+- Role-based access: Teacher & Student accounts
+- Authentication for login & signup
+- Create and submit feedback forms
+- View all feedback; filter by branch
+- Profile pages for teachers & students
+- Charts for feedback insights
+- Responsive UI (desktop & mobile)
+- Hugging Face API integration (for NLP/ML features)
 
-- **Role-based Access**: Teacher and Student accounts.
-- **JWT Authentication**: Secure login & signup.
-- **Feedback Management**:
-  - Create and submit feedback forms.
-  - View all feedback.
-  - Filter feedback by branch.
-- **Profile Management**: Update and view teacher/student profiles.
-- **Data Visualization**: Charts for feedback insights.
-- **Responsive UI**: Works seamlessly on desktop and mobile.
-- **Notifications**: Bootstrap Toasts and Material UI alerts.
-- **Integration with Hugging Face API**: For NLP/ML processing of feedback.
+## 📸 Screenshots
+| Notifications | Signup Page | Login Page |
+|---|---|---|
+| ![Notifications](./screenshots/notifications.png) | ![Signup](./screenshots/signup.png) | ![Login](./screenshots/login.png) |
 
----
+| Teacher Dashboard | Create Feedback | Student Profile |
+|---|---|---|
+| ![Teacher Dashboard](./screenshots/dashboard.png) | ![Create Feedback](./screenshots/create-feedback.png) | ![Student Profile](./screenshots/student-profile.png) |
 
-## 📷 Screenshots
-
-### Notifications
-![Notifications](./screenshots/notifications.png)
-
-### Signup Page
-![Signup](./screenshots/signup.png)
-
-### Login Page
-![Login](./screenshots/login.png)
-
-### Teacher Dashboard
-![Teacher Dashboard](./screenshots/dashboard.png)
-
-### Create Feedback
-![Create Feedback](./screenshots/create-feedback.png)
-
-### Student Profile
-![Student Profile](./screenshots/student-profile.png)
-
-### Teacher Profile
-![Teacher Profile](./screenshots/teacher-profile.png)
-
----
+| Teacher Profile |
+|---|
+| ![Teacher Profile](./screenshots/teacher-profile.png) |
 
 ## 🛠 Tech Stack
+**Frontend**
+- React 17
+- Material UI (MUI)
+- Chart.js + react-chartjs-2
+- React Router DOM v6
+- Yup (form validation)
+- Chroma.js
+- React Table
 
-### **Frontend**
-- **React 17** – UI framework.
-- **Material UI (MUI)** – UI components.
-- **Chart.js + react-chartjs-2** – Feedback visualization.
-- **React Router DOM v6** – Routing & navigation.
-- **Axios** – HTTP requests.
-- **Yup** – Form validation.
-- **Chroma.js** – Color manipulation.
-- **React Table** – Data table rendering.
+**Backend**
+- Node.js, Express.js
+- MongoDB + Mongoose
+- dotenv, cors, morgan
+- node-fetch, path
+- (Auth for login & signup)
+- Hugging Face integration from backend
 
-### **Backend**
-- **Node.js** – JavaScript runtime.
-- **Express.js** – Web server framework.
-- **MongoDB** – NoSQL database.
-- **Mongoose** – ODM for MongoDB.
-- **dotenv** – Environment variable management.
-- **cors** – Cross-origin request handling.
-- **jsonwebtoken (JWT)** – Authentication.
-- **morgan** – HTTP request logging.
-- **node-fetch** – External API calls.
-- **path** – File path utilities.
+**Development**
+- nodemon
+- ESLint & Prettier
 
-### **Development Tools**
-- **nodemon** – Auto server restart.
-- **ESLint & Prettier** – Code linting and formatting.
-
----
-
-## 📦 Installation & Setup
-
-### 1️⃣ Clone the repository
+## ⚙️ Installation & Setup
 ```bash
+# 1) Clone the repository
 git clone https://github.com/mahammadctr/Student-Feedback-Portal.git
 cd Student-Feedback-Portal
-````
 
-### 2️⃣ Backend Setup
-
-```bash
+# 2) Backend setup
 cd backend
 npm install
-```
 
-Create a `.env` file in the `backend` folder:
-
-```env
-MONGODB_URL="your-mongodb-connection-string"
+# Create .env in backend (replace with your real values)
+echo 'MONGODB_URL="your-mongodb-connection-string"
 HF_TOKEN="your-huggingface-token"
-PORT=3005
-```
+PORT=3005' > .env
 
-Start the backend:
-
-```bash
+# Start backend
 npm start
-```
 
-### 3️⃣ Frontend Setup
-
-```bash
-cd frontend
+# 3) Frontend setup
+cd ../frontend
 npm install
 npm start
+```markdown
 ```
-
----
 
 ## 🔐 Environment Variables
 
-| Variable     | Description                         |
-| ------------ | ----------------------------------- |
-| MONGODB\_URL | MongoDB connection string           |
-| HF\_TOKEN    | Hugging Face API token              |
-| PORT         | Backend server port (default: 3005) |
+| Variable      | Description                         |
+| ------------- | ----------------------------------- |
+| `MONGODB_URL` | MongoDB connection string           |
+| `HF_TOKEN`    | Hugging Face API token              |
+| `PORT`        | Backend server port (default: 3005) |
 
----
-
-## 📬 API Endpoints (Examples)
+## 📬 API Endpoints (examples)
 
 | Method | Endpoint            | Description              |
 | ------ | ------------------- | ------------------------ |
@@ -136,53 +90,24 @@ npm start
 | POST   | `/feedback`         | Create new feedback      |
 | GET    | `/feedback/:branch` | Get branch-wise feedback |
 
----
+## 🗂 Architecture
 
-## 📊 Architecture Diagram
-
-```plaintext
-Frontend (React + MUI)
-        ↓ Axios HTTP Requests
-Backend (Node.js + Express)
-        ↓ Mongoose Queries
-Database (MongoDB)
-
-External Integration:
-Backend ↔ Hugging Face API
+```text
+Frontend (React + MUI) → Router/Forms → Axios/fetch → Backend (Express) → Mongoose → MongoDB
+External integration: Backend ↔ Hugging Face API
 ```
 
----
-
-## 🧑‍💻 Contributing
-
-1. **Fork** the repository.
-2. Create a new branch:
-
-   ```bash
-   git checkout -b feature-name
-   ```
-3. Commit and push changes:
-
-   ```bash
-   git push origin feature-name
-   ```
-4. Open a **Pull Request**.
-
----
-
-## 📄 License
+## 📜 License
 
 This project is licensed under the **MIT License**.
 
----
-
-## 🙌 Acknowledgements
+## 🙏 Acknowledgements
 
 * [Material UI](https://mui.com)
 * [Chart.js](https://www.chartjs.org)
-* [Bootstrap](https://getbootstrap.com)
 * [Hugging Face](https://huggingface.co)
 * [MongoDB](https://www.mongodb.com)
 
 ```
 ```
+
