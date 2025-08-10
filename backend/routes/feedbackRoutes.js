@@ -281,7 +281,8 @@ router.get('/active/:feedback_id',async(req,res)=>{
         const response = await fetch(
             "https://api-inference.huggingface.co/models/knkarthick/MEETING_SUMMARY",
             {
-                headers: { Authorization: `Bearer REDACTED` },
+               headers: { Authorization: `Bearer ${process.env.HF_TOKEN}` },
+
                 method: "POST",
                 body: JSON.stringify(datas),
             }
